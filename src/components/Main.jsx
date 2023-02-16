@@ -31,23 +31,33 @@ const Main = () => {
     }, [])
 
     useEffect(() => {
+        if (allPlayers.length) {
         let teamOne = []
         let teamTwo = []
         allPlayers.forEach((player, idx) => {
             if (idx % 2 === 0) {
-                allPlayers.push(teamOne) 
+                teamOne.push(player) 
+                
             } else {
-                allPlayers.push(teamTwo)
+                teamTwo.push(player)
+                
             }
-            return
-        })
+        })}
+        setTeam1(teamOne)
+        setTeam2(teamTwo)
+        console.log(teamOne)
+
     }, [allPlayers])
     console.log(allPlayers)
+
+   
+   
+   
     return(
 
         <div id="main">
             <Navbar />
-            <Teams allPlayers={allPlayers}/>
+            <Teams allPlayers={allPlayers} team1={team1} team2={team2}/>
         </div>
     )
 }
