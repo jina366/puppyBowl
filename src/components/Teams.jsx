@@ -8,10 +8,10 @@ export default function Teams(props) {
 
   return (
     <div>
-        <div>
+        <div id='teamOne'>
             <Players allPlayers={allPlayers}/>
         </div>
-        <div>Teams2</div>
+        <div id='teamTwo'>Teams2</div>
     </div>
   )
 }

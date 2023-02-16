@@ -8,17 +8,19 @@ const Main = () => {
     const [allPlayers, setAllPlayers] = useState([])
     const [team1, setTeam1] = useState([])
     const [team2, setTeam2] = useState([])
-    function showID() {
-        const newTeams = [...allPlayers]
-        const teams = newTeams.find(teams => teams.id === id)
-        console.log(teams)
-    }
+    
+    // function showID() {
+    //     const newTeams = [...allPlayers]
+    //     const teams = newTeams.find(teams => teams.id === id)
+    //     console.log(teams)
+    // }
    
 
     async function fetchAllPlayers() {
         try {
             const data = await getAllPuppyWithFetch();
             setAllPlayers(data);
+            
         } catch (error) {
             console.log(error);
         }
@@ -28,6 +30,19 @@ const Main = () => {
         fetchAllPlayers();
     }, [])
 
+    useEffect(() => {
+        let teamOne = []
+        let teamTwo = []
+        allPlayers.forEach((player, idx) => {
+            if (idx % 2 === 0) {
+                allPlayers.push(teamOne) 
+            } else {
+                allPlayers.push(teamTwo)
+            }
+            return
+        })
+    }, [allPlayers])
+    console.log(allPlayers)
     return(
 
         <div id="main">
