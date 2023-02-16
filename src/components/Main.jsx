@@ -6,6 +6,14 @@ import {Teams} from "./";
 const Main = () => {
 
     const [allPlayers, setAllPlayers] = useState([])
+    const [team1, setTeam1] = useState([])
+    const [team2, setTeam2] = useState([])
+    function showID() {
+        const newTeams = [...allPlayers]
+        const teams = newTeams.find(teams => teams.id === id)
+        console.log(teams)
+    }
+   
 
     async function fetchAllPlayers() {
         try {
@@ -25,7 +33,6 @@ const Main = () => {
         <div id="main">
             <Navbar />
             <Teams allPlayers={allPlayers}/>
-            <getAllPuppyWithFetch />
         </div>
     )
 }

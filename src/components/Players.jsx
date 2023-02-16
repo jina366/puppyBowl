@@ -1,8 +1,14 @@
-import React from 'react'
-import { getAllPuppyWithFetch } from '../apiAdapters'
+import React, { useState } from 'react'
 
-export default function Players() {
+export default function Players(props) {
+  const player = props.players
+
+  const [] = useState([])
+  
+  
   return (
-    <div>{ getAllPuppyWithFetch }</div>
+    <div>
+      <h3>{player}</h3>
+      </div>
   )
 }

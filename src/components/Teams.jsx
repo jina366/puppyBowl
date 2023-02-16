@@ -1,9 +1,10 @@
 import React from 'react'
 import Players from './Players'
 
-export default function Teams() {
+export default function Teams(props) {
 
     const allPlayers = props.allPlayers
+    console.log(allPlayers)
 
   return (
     <div>
