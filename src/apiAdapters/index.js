@@ -4,8 +4,9 @@ const getAllPuppyWithFetch = async () => {
   try {
     const response = await fetch(`${BASE}/api/2301-ftb-et-web-ft/players`);
     const result = await response.json();
-    console.log(result);
-    return result
+    const fixedResult = result.data.players
+    console.log(fixedResult);
+    return fixedResult
   } catch (err) {
     console.error(err);
   }

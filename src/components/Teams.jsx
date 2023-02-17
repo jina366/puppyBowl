@@ -12,17 +12,19 @@ export default function Teams(props) {
 
   return (
     <div>
-        <div>
+        <div className='teamOne'>
           {firstTeam.map((player, idx) => (
-            <div>
-              {player.name} the {player.breed}
+            <div key={`team one: ${idx}`} >
+              <h3 >{player.name} the {player.breed}</h3>
+              <img className='puppy-pic' src={player.imageUrl} />
             </div>
           ))}
         </div>
-        <div>
+        <div className='teamTwo'>
           {secondTeam.map((player, idx) => (
-            <div>
-              {player.name} the {player.breed}  
+            <div key={`team two: ${idx}`} >
+              <h3 >{player.name} the {player.breed}</h3>
+              <img className='puppy-pic' src={player.imageUrl} />
             </div>
           ))}
         </div>

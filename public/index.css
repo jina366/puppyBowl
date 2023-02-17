@@ -11,3 +11,16 @@ body {
     max-height: 10%;
     min-height: 40px;
 }
+
+.teamOne, 
+.teamTwo {
+    padding: 20px;
+    border: 2px solid black;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+
+.puppy-pic {
+    width: 200px;
+}

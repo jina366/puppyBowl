@@ -33,10 +33,10 @@ const Main = () => {
     useEffect(() => {
 
         
-        if (allPlayers.data.players.length) {
+        if (allPlayers) {
             let teamOne = [];
             let teamTwo = [];
-            allPlayers.data.players.forEach((player, idx) => {
+            allPlayers.forEach((player, idx) => {
                 if (idx % 2 === 0) {
                     teamOne.push(player);
                 } else {
@@ -49,7 +49,7 @@ const Main = () => {
             console.log(teamTwo);
         }
     }, [allPlayers]);
-    console.log(allPlayers.data.players.length)
+    console.log(allPlayers)
 
     return(
 
