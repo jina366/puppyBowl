@@ -18,7 +18,8 @@ export default function Teams(props) {
             <div className='puppy-desc' key={`team one: ${idx}`} >
               <h3 >{player.name}{player.id}</h3>
               <img className='puppy-pic' src={player.imageUrl} />
-              <Link to={Players}>See Details</Link> 
+              <Players firstTeam={firstTeam} secondTeam={secondTeam} allPlayers={allPlayers}/>
+              <Link to={`Players ${player.id}`} firstTeam={firstTeam} secondTeam={secondTeam} allPlayers={allPlayers} >See Details</Link> 
             </div>
             )
           }) : null
@@ -31,12 +32,14 @@ export default function Teams(props) {
             <div className='puppy-desc' key={`team two: ${idx}`} >
               <h3 >{player.name}{player.id}</h3>
               <img className='puppy-pic' src={player.imageUrl} />
-              <Link to={Players} >See Details</Link> 
+              <Players secondTeam={secondTeam}/>
+              <Link to={`Players ${player.id}`} >See Details</Link> 
             </div>
             )
             }) : null
           }
         </div>
+        <Outlet />
     </div>
   )
 }

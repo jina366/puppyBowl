@@ -3,6 +3,7 @@ import { Navbar } from "./";
 import { getAllPuppyWithFetch } from "../apiAdapters";
 import {Teams} from "./";
 import { Outlet } from "react-router-dom";
+import Players from "./Players";
 
 
 const Main = () => {

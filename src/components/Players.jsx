@@ -2,8 +2,12 @@ import React, { useState } from 'react'
 import { useParams, Link } from 'react-router-dom';
 
 export default function Players(props) {
-  const player = props.players
-  console.log(player)
+  const allPlayers = props.allPlayers
+  const firstTeam = props.team1
+  const secondTeam = props.team2
+  console.log(firstTeam)
+  console.log(secondTeam)
+  console.log(allPlayers)
 
   const [] = useState([])
   let { id } = useParams();
@@ -11,14 +15,12 @@ export default function Players(props) {
   return (
     <div>
       {
-        id ? <h3>{id}</h3> : <h3>Nothing</h3>
-      }
-      {player.map((player) => (
-        <h3>{player.breed}
-        <Outlet />
-        </h3>
-      ))}
-      <Link to="/Teams">Go Back</Link>
+        id ? firstTeam.map((player) => {
+          return (
+            <h3>{player.name}</h3>
+          )
+        }): <h3>Nothing</h3>}
+      <Link to="/">Go Back</Link>
       </div>
   )
 }
