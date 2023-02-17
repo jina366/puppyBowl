@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Outlet, Link } from 'react-router-dom';
 
 export default function Players(props) {
   const allPlayers = props.allPlayers
@@ -11,6 +11,17 @@ export default function Players(props) {
 
   const [] = useState([])
   let { id } = useParams();
+
+  const getAllPuppyID = async () => {
+    try {
+      const response = await fetch(`https://fsa-puppy-bowl.herokuapp.com/api/2301-ftb-et-web-ft/players/${id}`)
+      const result = await response.json();
+      return result
+    } catch (error) {
+      console.log(error)
+    }
+  }
+  getAllPuppyID()
   
   return (
     <div>
@@ -19,6 +30,7 @@ export default function Players(props) {
           return (
             <h3>{player.name}</h3>
           )
+
         }): <h3>Nothing</h3>}
       <Link to="/">Go Back</Link>
       </div>

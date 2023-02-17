@@ -13,7 +13,7 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <>
       <Route path="/" element={<Main />}>
-        <Route path=":id" element={<Players />} />
+        <Route path="players/:id" element={<Players />} />
       </Route>
     </>
   )

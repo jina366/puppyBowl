@@ -7,7 +7,7 @@ export default function Teams(props) {
     const allPlayers = props.allPlayers
     const firstTeam = props.team1
     const secondTeam = props.team2
-    console.log(firstTeam)
+    
 
   return (
     <div>
@@ -18,8 +18,8 @@ export default function Teams(props) {
             <div className='puppy-desc' key={`team one: ${idx}`} >
               <h3 >{player.name}{player.id}</h3>
               <img className='puppy-pic' src={player.imageUrl} />
-              <Players firstTeam={firstTeam} secondTeam={secondTeam} allPlayers={allPlayers}/>
-              <Link to={`Players ${player.id}`} firstTeam={firstTeam} secondTeam={secondTeam} allPlayers={allPlayers} >See Details</Link> 
+              {/* <Players firstTeam={firstTeam} secondTeam={secondTeam} allPlayers={allPlayers}/> */}
+              <Link to={`players/${player.id}`} firstteam={firstTeam} secondteam={secondTeam} allplayers={allPlayers} >See Details</Link> 
             </div>
             )
           }) : null
@@ -32,8 +32,8 @@ export default function Teams(props) {
             <div className='puppy-desc' key={`team two: ${idx}`} >
               <h3 >{player.name}{player.id}</h3>
               <img className='puppy-pic' src={player.imageUrl} />
-              <Players secondTeam={secondTeam}/>
-              <Link to={`Players ${player.id}`} >See Details</Link> 
+              {/* <Players secondTeam={secondTeam}/> */}
+              <Link to={`players/${player.id}`} >See Details</Link> 
             </div>
             )
             }) : null

@@ -48,11 +48,12 @@ const Main = () => {
             });
             setTeam1(teamOne);
             setTeam2(teamTwo);
-            console.log(teamOne);
-            console.log(teamTwo);
+            console.log(teamOne)
+            
+        
         }
-    }, [allPlayers]);
-    console.log(allPlayers)
+    }, []);
+    console.log(team1)
 
     return(
 
