@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Navbar } from "./";
 import { getAllPuppyWithFetch } from "../apiAdapters";
 import {Teams} from "./";
+import { Outlet } from "react-router-dom";
+
 
 const Main = () => {
 
@@ -55,6 +57,7 @@ const Main = () => {
 
         <div id="main">
             <Navbar />
+            <Outlet />
             <Teams allPlayers={allPlayers} team1={team1} team2={team2}/>
         </div>
     )
