@@ -9,13 +9,7 @@ const Main = () => {
     const [team1, setTeam1] = useState([])
     const [team2, setTeam2] = useState([])
     
-    // function showID() {
-    //     const newTeams = [...allPlayers]
-    //     const teams = newTeams.find(teams => teams.id === id)
-    //     console.log(teams)
-    // }
-   
-
+    
     async function fetchAllPlayers() {
         try {
             const data = await getAllPuppyWithFetch();
@@ -25,34 +19,38 @@ const Main = () => {
             console.log(error);
         }
     }
-
+    
+    // function showID() {
+    //     const newTeams = [...allPlayers]
+    //     const teams = newTeams.find(teams => teams.id === id)
+    //     console.log(teams)
+    // }
+   
     useEffect(() => {
         fetchAllPlayers();
     }, [])
 
     useEffect(() => {
-        if (allPlayers.length) {
-        let teamOne = []
-        let teamTwo = []
-        allPlayers.forEach((player, idx) => {
-            if (idx % 2 === 0) {
-                teamOne.push(player) 
-                
-            } else {
-                teamTwo.push(player)
-                
-            }
-        })}
-        setTeam1(teamOne)
-        setTeam2(teamTwo)
-        console.log(teamOne)
 
-    }, [allPlayers])
-    console.log(allPlayers)
+        
+        if (allPlayers.data.players.length) {
+            let teamOne = [];
+            let teamTwo = [];
+            allPlayers.data.players.forEach((player, idx) => {
+                if (idx % 2 === 0) {
+                    teamOne.push(player);
+                } else {
+                    teamTwo.push(player);
+                }
+            });
+            setTeam1(teamOne);
+            setTeam2(teamTwo);
+            console.log(teamOne);
+            console.log(teamTwo);
+        }
+    }, [allPlayers]);
+    console.log(allPlayers.data.players.length)
 
-   
-   
-   
     return(
 
         <div id="main">

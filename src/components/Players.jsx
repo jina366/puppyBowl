@@ -8,7 +8,10 @@ export default function Players(props) {
   
   return (
     <div>
-      <h3>{player}</h3>
+      {players.map((player) => (
+        <h3>{player.name}</h3>
+
+      ))}
       </div>
   )
 }
