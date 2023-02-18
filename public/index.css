@@ -1,36 +1,73 @@
 body {
     margin: 0;
 }
+#main, .container {
+    height: 100vh;
+    background-color: beige;
+}
 
 #navbar {
     background-color: black;
     color: white;
     display: flex;
     align-items: center;
-    flex-grow: 1;
     max-height: 10%;
     min-height: 40px;
+    width: 100%;
 }
-
+.puppyName-ID {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 2px solid black;
+}
 .teamOne, 
 .teamTwo
 {
-    padding: 20px;
+    margin: 10px;
     border: 2px solid black;
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row;
     justify-content: space-evenly;
+    padding: 5px;
+    background-color: white;
+    overflow: auto;
 }
 
 .puppy-pic {
     width: 200px;
+    margin-bottom: 10px;
 }
 .puppy-desc {
+    max-width: 212px;
     display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
-    width: 33%;
+    flex-flow: column;
+    justify-content: space-evenly;
     align-items: center;
     border: 1px solid black;
     padding: 5px;
+    margin: 5px;
+}
+.playersPic {
+    height: 700px;
+    margin: 1rem;
+    max-width: 100%;
+}
+.playersBackground {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: beige;
+}
+.playersDiv {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid black;
+    width: 70%;
+    margin: 10px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    background-color: white;
 }

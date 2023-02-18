@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Navbar } from "./";
 import { getAllPuppyWithFetch } from "../apiAdapters";
 import {Teams} from "./";
-import { Outlet } from "react-router-dom";
-import Players from "./Players";
 
 
 const Main = () => {
@@ -12,23 +10,16 @@ const Main = () => {
     const [team1, setTeam1] = useState([])
     const [team2, setTeam2] = useState([])
     
-    
     async function fetchAllPlayers() {
         try {
             const data = await getAllPuppyWithFetch();
-            setAllPlayers(data);
             
+            setAllPlayers(data);
         } catch (error) {
             console.log(error);
         }
     }
     
-    // function showID() {
-    //     const newTeams = [...allPlayers]
-    //     const teams = newTeams.find(teams => teams.id === id)
-    //     console.log(teams)
-    // }
-   
     useEffect(() => {
         fetchAllPlayers();
     }, [])
@@ -36,7 +27,7 @@ const Main = () => {
     useEffect(() => {
 
         
-        if (allPlayers) {
+        if (allPlayers.length) {
             let teamOne = [];
             let teamTwo = [];
             allPlayers.forEach((player, idx) => {
@@ -46,21 +37,20 @@ const Main = () => {
                     teamTwo.push(player);
                 }
             });
-            setTeam1(teamOne);
-            setTeam2(teamTwo);
-            console.log(teamOne)
+            setTeam1(teamOne );
+            setTeam2(teamTwo) ;
             
-        
+            
+            
         }
-    }, []);
-    console.log(team1)
+    }, [allPlayers]);
+    
 
     return(
 
         <div id="main">
-            <Navbar />
-            <Outlet />
-            <Teams allPlayers={allPlayers} team1={team1} team2={team2}/>
+            <Navbar allPlayers={allPlayers}/>
+            <Teams allPlayers={allPlayers } team1={team1} team2={team2}/>
         </div>
     )
 }

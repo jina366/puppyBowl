@@ -12,9 +12,9 @@ import Players from "./components/Players";
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
-      <Route path="/" element={<Main />}>
-        <Route path="players/:id" element={<Players />} />
-      </Route>
+      <Route path="/" element={<Main />}/>
+      <Route path="players/:id" element={<Players />} />
+      
     </>
   )
 );
