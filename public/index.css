@@ -36,6 +36,7 @@ body {
 
 .puppy-pic {
     width: 200px;
+    height: 300px;
     margin-bottom: 10px;
 }
 .puppy-desc {
@@ -70,4 +71,19 @@ body {
     margin: 10px;
     font-family:Georgia, 'Times New Roman', Times, serif;
     background-color: white;
+}
+
+.search {
+    display: flex;
+    flex-flow: row;
+
+    margin: 10px;
+    border: 2px solid black;
+    display: flex;
+    flex-flow: row;
+    justify-content:left;
+    padding: 5px;
+    background-color: white;
+    overflow: auto;
+    padding-left: 10px;
 }

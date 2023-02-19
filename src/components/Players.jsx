@@ -6,7 +6,6 @@ export default function Players() {
   
   const [player, setPlayer] = useState(null)
   let { id } = useParams();
-  console.log(id)
   
   useEffect (() => {
     const getAllPuppyID = async () => {
@@ -33,6 +32,7 @@ export default function Players() {
           <h3>{player.name}</h3>
           <p>Breed: {player.breed}</p>
           <p>Status: {player.status}</p>
+          <p>Team: {player.teamId}</p>
           <img src={player.imageUrl} alt={player.name} className="playersPic"/>
           <Link to="/">Go Back</Link>
         </div>
