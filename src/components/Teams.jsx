@@ -18,7 +18,7 @@ export default function Teams(props) {
               <span>ID  #{player.id}</span>
               </h3>
               <img className='puppy-pic' src={player.imageUrl} />
-              <Link to={`players/${player.id}`}>See Details</Link> 
+              <Link to={`players/${player.id}`} >See Details</Link> 
             </div>
             )
           }) : null

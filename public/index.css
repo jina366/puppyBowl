@@ -11,6 +11,7 @@ body {
     color: white;
     display: flex;
     align-items: center;
+    justify-content: space-around;
     max-height: 10%;
     min-height: 40px;
     width: 100%;
@@ -32,6 +33,7 @@ body {
     padding: 5px;
     background-color: white;
     overflow: auto;
+    min-width: 1300px;
 }
 
 .puppy-pic {

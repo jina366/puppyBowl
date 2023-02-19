@@ -6,7 +6,7 @@ import { Searched } from "./";
 
 const Main = () => {
   const [allPlayers, setAllPlayers] = useState([]);
-  const [searched, setSearched] = useState([]);
+  const [searched, setSearched] = useState('');
   const [team1, setTeam1] = useState([]);
   const [team2, setTeam2] = useState([]);
 
